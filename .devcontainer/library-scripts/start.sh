@@ -3,6 +3,13 @@
 
 #Script modified from https://github.com/Pwd9000-ML/GitHub-Codespaces-Lab/tree/master/.devcontainer/codespaceADOagent
 
+if [! -f /home/vscode/azure-pipelines/vsts-agent-linux-${ARCH}-${AGENT_VERSION}.tar.gz]; then
+    echo "Downloading Azure Pipelines agent..."
+    curl -O -L https://vstsagentpackage.azureedge.net/agent/${AGENT_VERSION}/vsts-agent-linux-${ARCH}-${AGENT_VERSION}.tar.gz \
+    tar xzf /home/vscode/azure-pipelines/vsts-agent-linux-${ARCH}-${AGENT_VERSION}.tar.gz \
+    ./bin/installdependencies.sh
+fi
+
 #GitHub Codespace secrets
 ADO_ORG=$ADO_ORG
 ADO_PAT=$ADO_PAT
