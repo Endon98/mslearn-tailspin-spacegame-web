@@ -2,7 +2,7 @@ trigger:
 - dev
 
 pool: 
-  vmImage: Default
+  vmImage: MyAgentPool
 
 variables:
     buildConfiguration: 'Release'
