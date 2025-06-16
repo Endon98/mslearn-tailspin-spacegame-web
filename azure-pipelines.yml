@@ -2,7 +2,7 @@ trigger:
 - dev
 
 pool: 
-  vmImage: ubuntu-image
+  vmImage: Default
 
 variables:
     buildConfiguration: 'Release'
