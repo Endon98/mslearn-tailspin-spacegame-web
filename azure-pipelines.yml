@@ -1,3 +1,11 @@
-pool: MyAgentPool
+trigger: 
+- dev
+
+pool: 
+  vmImage: ubuntu-image
+
+variables:
+    buildConfiguration: 'Release'
 steps:
-- bash: echo hello world
+- script: dotnet build --configuration $(buildConfiguration) 
+  displayName: 'dotnet build $(buildConfiguration)'
