@@ -23,7 +23,7 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/sass $(wwwrootDir)/css/site.scss:$(wwwrootDir)/css/site.scss:$ --style compressed'
+- script: './node_modules/.bin/sass $(wwwrootDir)/css/site.scss:$(wwwrootDir)/css/site.css --style=compressed'
   displayName: 'Compile Sass assets'
 
 - task: gulp@1
