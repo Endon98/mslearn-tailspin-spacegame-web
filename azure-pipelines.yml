@@ -2,14 +2,14 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: ubuntu-latest
   demands:
   - npm
 
 variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '6.x'
+  dotnetSdkVersion: '8.x'
 
 steps:
 - task: UseDotNet@2
@@ -22,7 +22,7 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
+- script: './node_modules/.bin/sass $(wwwrootDir)/css/site.scss:$(wwwrootDir)/css/site.css --style=compressed'
   displayName: 'Compile Sass assets'
 
 - task: gulp@1
